@@ -7,7 +7,7 @@ const {ApolloServer} = require("apollo-server-express");
 const { authMiddleware } = require('./utils/auth');
 const app = express();
 const PORT = process.env.PORT || 3001;
-
+//mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/google-books", { useNewUrlParser: true }); 
 
 const startServer = async()=>{
 
@@ -36,6 +36,6 @@ if (process.env.NODE_ENV === 'production') {
   })
 }
 
-db.once('open', () => {
-  app.listen(PORT, () => console.log(`🌍 Now listening on localhost:${PORT}`));
+app.listen(PORT, function() {
+  console.log(`🌎  ==> API Server now listening on PORT: http://localhost:3000 ${PORT}!`);
 });
