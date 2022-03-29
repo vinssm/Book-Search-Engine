@@ -1,13 +1,14 @@
 const express = require('express');
+const mongoose = require("mongoose");
 const path = require('path');
-const db = require('./config/connection');
+//const db = require('./config/connection');
 const routes = require('./routes');
 const {typeDefs, resolvers} = require("./schemas")
 const {ApolloServer} = require("apollo-server-express");
 const { authMiddleware } = require('./utils/auth');
 const app = express();
 const PORT = process.env.PORT || 3001;
-//mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/google-books", { useNewUrlParser: true }); 
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/google-books", { useNewUrlParser: true }); 
 
 const startServer = async()=>{
 
@@ -36,6 +37,6 @@ if (process.env.NODE_ENV === 'production') {
   })
 }
 
-app.listen(PORT, function() {
-  console.log(`🌎  ==> API Server now listening on PORT: http://localhost:3000 ${PORT}!`);
+app.listen(PORT, () => {
+  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
