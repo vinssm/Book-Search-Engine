@@ -15,7 +15,7 @@ type Book{
     _id: ID
     username: String
     email: String
-    bookCount: Int
+    password: String
     savedBooks: [Book]
   }
 
@@ -31,10 +31,6 @@ type Book{
   type Auth {
     token: ID!
     user: User
-  }
-
-  type Query {
-    me: User
   }
 
   type Mutation {
