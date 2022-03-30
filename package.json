@@ -4,7 +4,7 @@
   "description": "- MERN Challenge: Book Search Engine.",
   "main": "server.js",
   "engines": {
-    "node": "12.11.1"
+    "node": "14.15.1"
   },
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
