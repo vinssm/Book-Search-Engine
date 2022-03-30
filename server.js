@@ -37,6 +37,12 @@ if (process.env.NODE_ENV === 'production') {
   })
 }
 
+mongoose.connect(MONGODB_URI, {
+  useNewUrlParser: true,
+  useFindAndModify: false
+});
+
+
 app.listen(PORT, () => {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
