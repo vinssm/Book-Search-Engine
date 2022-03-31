@@ -37,10 +37,10 @@ if (process.env.NODE_ENV === 'production') {
   })
 }
 
-mongoose.connect(MONGODB_URI, {
-  useNewUrlParser: true,
-  useFindAndModify: false
-});
+// mongoose.connect(MONGODB_URI, {
+//   useNewUrlParser: true,
+//   useFindAndModify: false
+// });
 
 
 app.listen(PORT, () => {
