@@ -3,6 +3,8 @@
 ### Description
 - MERN Challenge: Book Search Engine.
 
+* [Deployed Heroku Link](https://blooming-anchorage-00561.herokuapp.com/)
+
 ### User Story
 - AS AN avid reader
 - I WANT to search for new books to read
@@ -38,8 +40,6 @@
 - THEN that book is deleted from my saved books list
 - WHEN I click on the Logout button
 - THEN I am logged out of the site and presented with a menu with the options Search for Books and Login/Signup and an input field to search for books and a submit button  
-
-* [Deployed Heroku Link](https://blooming-anchorage-00561.herokuapp.com/)
 
 ## Usage
 - npm start
