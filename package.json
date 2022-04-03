@@ -8,13 +8,11 @@
   },
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-    "start:prod": "node server.js",
-    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
-    "client": "cd client && npm run start",
-    "seed": "node scripts/seedDB.js",
-    "install": "cd client && npm install",
-    "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build"
+    "start:prod": "cd server && npm start",
+    "start:dev": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "seed": "cd server && npm run seed",
+    "build": "cd client && npm run build"
   },
   "repository": {
     "type": "git",
@@ -29,8 +27,10 @@
   "dependencies": {
     "apollo-server-express": "^3.6.6",
     "bcrypt": "^5.0.1",
+    "engines": "^0.4.0",
     "express": "^4.17.3",
     "graphql": "^15.5.0",
+    "if-env": "^1.0.4",
     "jsonwebtoken": "^8.5.1",
     "mangodb": "^1.0.0",
     "mongoose": "^5.13.14",
